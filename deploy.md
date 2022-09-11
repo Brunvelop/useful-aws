@@ -9,6 +9,7 @@
 3. SSL 
     - AWS Certificate Manager -> create certificate
     - Click certificate -> Click crear registros en Route 53
+    - (tarda un rato en aplicarse)
 
 4. redirigir route 53 to cloudfront
     - crear registro: (A, alias, cloudfront link)
