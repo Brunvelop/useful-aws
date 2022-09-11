@@ -21,13 +21,10 @@ def upload_file(file_name, bucket, object_name=None, content_type=None):
     s3_client = boto3.client('s3')
     try:
         if content_type:
-            response = s3_client.upload_file(file_name, bucket, object_name, ExtraArgs={'ContentType':content_type}) 
+            response = s3_client.upload_file(file_name, bucket, object_name, ExtraArgs={'ContentType':content_type})  #application/json "image/png"
         else:
             response = s3_client.upload_file(file_name, bucket, object_name, )
     except ClientError as e:
         logging.error(e)
         return False
     return True
-
-if __name__ == "__main__":
-    upload_file('logo.png', 'prompts-images', 'images/3.png', "image/png") #application/json "image/png"
